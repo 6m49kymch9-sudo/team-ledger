@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0071E3;
+  --color-primary-dark: #0A84FF;
+  --color-success: #34C759;
+  --color-warning: #FF9500;
+  --color-error: #FF3B30;
+  
+  --color-surface: #F5F5F7;
+  --color-surface-dark: #1D1D1F;
+  
+  --color-text: #1D1D1F;
+  --color-text-dark: #F5F5F7;
+  --color-text-secondary: #6E6E73;
+  --color-text-secondary-dark: #A1A1A6;
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 12%;
+  --primary: 211 100% 41%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 6% 97%;
+  --secondary-foreground: 0 0% 12%;
+  --muted: 240 6% 97%;
+  --muted-foreground: 240 4% 46%;
+  --accent: 240 6% 97%;
+  --accent-foreground: 0 0% 12%;
+  --destructive: 4 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 6% 90%;
+  --input: 240 6% 90%;
+  --ring: 211 100% 41%;
+  --radius: 12px;
+}
+
+.dark {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 96%;
+  --card: 0 0% 12%;
+  --card-foreground: 0 0% 96%;
+  --popover: 0 0% 12%;
+  --popover-foreground: 0 0% 96%;
+  --primary: 214 100% 52%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 240 6% 17%;
+  --secondary-foreground: 0 0% 96%;
+  --muted: 240 6% 17%;
+  --muted-foreground: 240 4% 54%;
+  --accent: 240 6% 17%;
+  --accent-foreground: 0 0% 96%;
+  --destructive: 4 100% 59%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 6% 20%;
+  --input: 240 6% 20%;
+  --ring: 214 100% 52%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Apple-style focus ring */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glass effect */
+.glass {
+  background: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stat card glow */
+.stat-glow {
+  box-shadow: 0 0 40px -12px rgba(0, 113, 227, 0.15);
+}
+
+/* Chart container */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+/* Mobile nav safe area */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--muted-foreground) / 0.1) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Badge styles */
+.badge-catering { background-color: rgba(255, 149, 0, 0.15); color: #FF9500; }
+.badge-hotel { background-color: rgba(88, 86, 214, 0.15); color: #5856D6; }
+.badge-transport { background-color: rgba(0, 122, 255, 0.15); color: #007AFF; }
+.badge-project_cost { background-color: rgba(52, 199, 89, 0.15); color: #34C759; }
+.badge-client_entertainment { background-color: rgba(255, 45, 85, 0.15); color: #FF2D55; }
+.badge-advertising { background-color: rgba(175, 82, 222, 0.15); color: #AF52DE; }
+.badge-office { background-color: rgba(90, 200, 250, 0.15); color: #5AC8FA; }
+.badge-other { background-color: rgba(142, 142, 147, 0.15); color: #8E8E93; }
