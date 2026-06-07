@@ -4,22 +4,14 @@ import { useAuth } from '@/lib/auth-context'
 import { useRouter } from 'next/navigation'
 import { useEffect, ReactNode } from 'react'
 import Link from 'next/link'
-import {
-  LayoutDashboard,
-  Receipt,
-  ArrowRightLeft,
-  Users,
-  Download,
-  Settings,
-  LogOut,
-  Menu,
-} from 'lucide-react'
+import { ArrowRightLeft, Users, Download, Settings, LogOut, Menu, TrendingUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 const navItems = [
   { href: '/app', label: '数据看板', icon: LayoutDashboard },
   { href: '/app/expenses', label: '账单列表', icon: Receipt },
+  { href: '/app/incomes', label: '收入记录', icon: TrendingUp },
   { href: '/app/settle', label: '结算中心', icon: ArrowRightLeft },
   { href: '/app/team', label: '团队管理', icon: Users },
   { href: '/app/export', label: '导出中心', icon: Download },
